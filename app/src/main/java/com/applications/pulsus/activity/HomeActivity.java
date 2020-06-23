@@ -1,6 +1,10 @@
 package com.applications.pulsus.activity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -8,6 +12,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,7 +29,6 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-
 import com.applications.pulsus.R;
 import com.applications.pulsus.adapters.PaginationAdapter;
 import com.applications.pulsus.api.ApiInterface;
@@ -34,11 +38,13 @@ import com.applications.pulsus.models.Events;
 import com.applications.pulsus.utils.ConstantValues;
 import com.applications.pulsus.utils.MyAppPrefsManager;
 import com.applications.pulsus.utils.PaginationScrollListener;
+import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.navigation.NavigationView;
 import com.google.gson.JsonObject;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.net.URL;
 import java.util.List;
 
 import butterknife.BindView;
@@ -58,6 +64,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     @BindView(R.id.progressbar)
     ProgressBar progressBar;
+    @BindView(R.id.appbarLayout)
+    AppBarLayout appbarLayout;
+    @BindView(R.id.nestedScroll)
+    LinearLayout nestedScroll;
 
    /* @BindView(R.id.main_progress)
     ProgressBar progressBar;*/
@@ -89,6 +99,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     String subject, city, month, filterValue, filterCount;
     MyAppPrefsManager myAppPrefsManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,6 +110,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         //Objects.requireNonNull(toolbar).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         toolbar.setTitle("");
@@ -132,6 +144,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
+        toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.colorPrimaryDark));
         toggle.syncState();
 
         NavigationView navigationView = findViewById(R.id.nav_view);
