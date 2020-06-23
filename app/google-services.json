@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "763034122649",
+    "firebase_url": "https://pulsus-69dbf.firebaseio.com",
+    "project_id": "pulsus-69dbf",
+    "storage_bucket": "pulsus-69dbf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763034122649:android:ca0d5c0ea2b375e4e5bb08",
+        "android_client_info": {
+          "package_name": "com.applications.pulsus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "763034122649-t6f5vmcj6sghpupc5a6cb1nqorjsm05k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXYviX-GcxEdxOKFQ5hEMah6gPfIqvO6c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "763034122649-t6f5vmcj6sghpupc5a6cb1nqorjsm05k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
