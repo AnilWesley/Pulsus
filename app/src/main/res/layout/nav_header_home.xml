@@ -22,27 +22,28 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="EuroSciCon"
+            android:text="@string/app_name"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
 
         <TextView
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.6"
-            android:text="www.euroscicon.com"
+            android:textSize="11sp"
+            android:text="www.pulsusconference.com"
             android:textColor="@color/white" />
     </LinearLayout>
 
     <ImageView
-        android:layout_width="170dp"
+        android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_weight="1"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/logo" />
+        android:src="@drawable/logo"
+        android:background="@color/white"/>
 
 </LinearLayout>
 

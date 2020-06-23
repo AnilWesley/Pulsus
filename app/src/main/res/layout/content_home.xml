@@ -26,9 +26,10 @@
 
 
             <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbarLayout"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
-                android:background="@drawable/homepage"
+                android:background="@drawable/background_image"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
                 <androidx.appcompat.widget.Toolbar
@@ -75,6 +76,7 @@
                     </androidx.cardview.widget.CardView>
 
                 </RelativeLayout>
+
             </com.google.android.material.appbar.AppBarLayout>
 
 
