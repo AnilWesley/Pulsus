@@ -164,6 +164,7 @@ public class PaginationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 if (movieResults.get(position).getIcon_url() == null) {
                     movieVH.progressBar.setVisibility(View.GONE);
                 } else {        // load movie thumbnail
+                    Log.d(TAG, "onBindViewHolder: "+result.getIcon_url());
                     Glide.with(context)
                             .load(result.getIcon_url())
                             .apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.NONE))

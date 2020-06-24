@@ -209,21 +209,32 @@ public class BrochureDownloadActivity extends AppCompatActivity {
                     if (brochureDownload.isStatus()) {
                         List<BrochureDownload.FileBean> fileBeans = brochureDownload.getFile();
 
-                        path = fileBeans.get(0).getBrochure_file();
+                        if ( fileBeans.size() == 0){
 
-                        Log.d(TAG, "onResponse: " + path);
-                        WebView webView = new WebView(getApplicationContext());
-                        webView.loadUrl(path);
-                        webView.setDownloadListener(new DownloadListener() {
-                            public void onDownloadStart(String url, String userAgent,
-                                                        String contentDisposition, String mimetype,
-                                                        long contentLength) {
-                                Intent i = new Intent(Intent.ACTION_VIEW);
-                                i.setData(Uri.parse(path));
-                                startActivity(i);
-                            }
-                        });
-                        progressBar.setVisibility(View.GONE);
+                            progressBar.setVisibility(View.GONE);
+                            Toast.makeText(BrochureDownloadActivity.this, "No Brochure Available", Toast.LENGTH_SHORT).show();
+
+                        }else {
+
+
+                            path = fileBeans.get(0).getBrochure_file();
+                            WebView webView = new WebView(getApplicationContext());
+                            webView.loadUrl(path);
+                            webView.setDownloadListener(new DownloadListener() {
+                                public void onDownloadStart(String url, String userAgent,
+                                                            String contentDisposition, String mimetype,
+                                                            long contentLength) {
+                                    Intent i = new Intent(Intent.ACTION_VIEW);
+                                    i.setData(Uri.parse(path));
+                                    startActivity(i);
+                                }
+                            });
+                            progressBar.setVisibility(View.GONE);
+
+                            onBackPressed();
+
+                        }
+
                     } else {
                         progressBar.setVisibility(View.GONE);
                         Toast.makeText(BrochureDownloadActivity.this, "Failed", Toast.LENGTH_SHORT).show();
