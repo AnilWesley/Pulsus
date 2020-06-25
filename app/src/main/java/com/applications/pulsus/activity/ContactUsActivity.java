@@ -1,6 +1,7 @@
 package com.applications.pulsus.activity;
 
 import android.annotation.SuppressLint;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,7 +15,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 
 import com.applications.pulsus.R;
 import com.applications.pulsus.api.ApiInterface;
@@ -51,18 +51,22 @@ public class ContactUsActivity extends AppCompatActivity {
     Button btnDownload;
     @BindView(R.id.txtmailAmerica)
     TextView txtmailAmerica;
-    @BindView(R.id.txtDailAmerica)
-    TextView txtDailAmerica;
-    @BindView(R.id.txtMailasia)
-    TextView txtMailasia;
-    @BindView(R.id.txtDailasia)
-    TextView txtDailasia;
     @BindView(R.id.progressBar)
     LinearLayout progressBar;
 
-    String firstName,email,phone,quires;
-    String TAG="RESPONSE_DATA";
+    String firstName, email, phone, quires;
+    String TAG = "RESPONSE_DATA";
     String date;
+    @BindView(R.id.txtmail2)
+    TextView txtmail2;
+    @BindView(R.id.txtmail3)
+    TextView txtmail3;
+    @BindView(R.id.txtmail4)
+    TextView txtmail4;
+    @BindView(R.id.txtDailUK)
+    TextView txtDailUK;
+    @BindView(R.id.txtDailUSA)
+    TextView txtDailUSA;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,13 +86,66 @@ public class ContactUsActivity extends AppCompatActivity {
     }
 
 
-
-    @OnClick({R.id.btnDownload, R.id.txtmailAmerica, R.id.txtDailAmerica, R.id.txtMailasia, R.id.txtDailasia})
+    @OnClick({R.id.txtmailAmerica, R.id.txtmail2, R.id.txtmail3, R.id.txtmail4, R.id.txtDailUK, R.id.txtDailUSA, R.id.btnDownload})
     public void onViewClicked(View view) {
         switch (view.getId()) {
+            case R.id.txtmailAmerica:
+                Intent i = new Intent(Intent.ACTION_SEND);
+                i.setType("message/rfc822");
+                i.putExtra(Intent.EXTRA_EMAIL, new String[]{txtmailAmerica.getText().toString()});
+
+                try {
+                    startActivity(Intent.createChooser(i, "Send mail..."));
+                } catch (ActivityNotFoundException ex) {
+                    Toast.makeText(ContactUsActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case R.id.txtmail2:
+                Intent i2 = new Intent(Intent.ACTION_SEND);
+                i2.setType("message/rfc822");
+                i2.putExtra(Intent.EXTRA_EMAIL, new String[]{txtmail2.getText().toString()});
+
+                try {
+                    startActivity(Intent.createChooser(i2, "Send mail..."));
+                } catch (ActivityNotFoundException ex) {
+                    Toast.makeText(ContactUsActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case R.id.txtmail3:
+                Intent i3 = new Intent(Intent.ACTION_SEND);
+                i3.setType("message/rfc822");
+                i3.putExtra(Intent.EXTRA_EMAIL, new String[]{txtmail3.getText().toString()});
+
+                try {
+                    startActivity(Intent.createChooser(i3, "Send mail..."));
+                } catch (ActivityNotFoundException ex) {
+                    Toast.makeText(ContactUsActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case R.id.txtmail4:
+                Intent i4= new Intent(Intent.ACTION_SEND);
+                i4.setType("message/rfc822");
+                i4.putExtra(Intent.EXTRA_EMAIL, new String[]{txtmail4.getText().toString()});
+
+                try {
+                    startActivity(Intent.createChooser(i4, "Send mail..."));
+                } catch (ActivityNotFoundException ex) {
+                    Toast.makeText(ContactUsActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case R.id.txtDailUK:
+                Intent intent1 = new Intent(Intent.ACTION_DIAL);
+                String temp1 = "tel:" + txtDailUK.getText().toString();
+                intent1.setData(Uri.parse(temp1));
+                startActivity(intent1);
+                break;
+            case R.id.txtDailUSA:
+                Intent intent2 = new Intent(Intent.ACTION_DIAL);
+                String temp2 = "tel:" + txtDailUSA.getText().toString();
+                intent2.setData(Uri.parse(temp2));
+                startActivity(intent2);
+                break;
             case R.id.btnDownload:
-
-
                 firstName = Objects.requireNonNull(editFirst.getText()).toString().trim();
                 email = Objects.requireNonNull(editEmail.getText()).toString().trim();
                 phone = Objects.requireNonNull(editPhone.getText()).toString().trim();
@@ -112,47 +169,9 @@ public class ContactUsActivity extends AppCompatActivity {
 
                 }
 
-
                 break;
-            case R.id.txtmailAmerica:
-                Intent i = new Intent(Intent.ACTION_SEND);
-                i.setType("message/rfc822");
-                i.putExtra(Intent.EXTRA_EMAIL  , new String[]{txtmailAmerica.getText().toString()});
-
-                try {
-                    startActivity(Intent.createChooser(i, "Send mail..."));
-                } catch (android.content.ActivityNotFoundException ex) {
-                    Toast.makeText(ContactUsActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
-                }
-                break;
-            case R.id.txtDailAmerica:
-                Intent intent = new Intent(Intent.ACTION_DIAL);
-                String temp = "tel:" + txtDailAmerica.getText().toString();
-                intent.setData(Uri.parse(temp));
-                startActivity(intent);
-                break;
-            case R.id.txtMailasia:
-                Intent i1 = new Intent(Intent.ACTION_SEND);
-                i1.setType("message/rfc822");
-                i1.putExtra(Intent.EXTRA_EMAIL  , new String[]{txtMailasia.getText().toString()});
-
-                try {
-                    startActivity(Intent.createChooser(i1, "Send mail..."));
-                } catch (android.content.ActivityNotFoundException ex) {
-                    Toast.makeText(ContactUsActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
-                }
-                break;
-            case R.id.txtDailasia:
-                Intent intent1 = new Intent(Intent.ACTION_DIAL);
-                String temp1 = "tel:" + txtDailasia.getText().toString();
-                intent1.setData(Uri.parse(temp1));
-                startActivity(intent1);
-                break;
-
         }
     }
-
-
 
     public void downloadBrochure() {
 
@@ -183,7 +202,7 @@ public class ContactUsActivity extends AppCompatActivity {
                         editEmail.setText("");
                         editPhone.setText("");
                         editQuires.setText("");
-                    }else {
+                    } else {
                         progressBar.setVisibility(View.GONE);
                         Toast.makeText(ContactUsActivity.this, "Failed", Toast.LENGTH_SHORT).show();
                     }
@@ -213,4 +232,6 @@ public class ContactUsActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }
