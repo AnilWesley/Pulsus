@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.smarteist.autoimageslider.SliderViewAdapter;
 
+
 import java.util.List;
 
 public class BannerAdapter extends SliderViewAdapter<BannerAdapter.SliderAdapterVH> {
