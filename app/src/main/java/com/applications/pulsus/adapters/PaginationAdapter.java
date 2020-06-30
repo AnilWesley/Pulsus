@@ -33,6 +33,7 @@ import org.jetbrains.annotations.NotNull;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -121,14 +122,20 @@ public class PaginationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 String date1 = spf.format(newDate);
                 String[] data1 = date1.split(" ", 2);
                 String month1 = "" + data1[0];
+                String date_1 = "" + data1[1];
 
                 assert newDate1 != null;
                 String date2 = spf1.format(newDate1);
                 String[] data2 = date2.split(" ", 2);
                 String month2 = "" + data2[0];
+                String date_2 = "" + data2[1];
+                String[] data3 = date_2.split(", ", 2);
+                String date_3=""+data3[0];
 
                 String date3;
-                if (month1.equalsIgnoreCase(month2)) {
+                if (date_1.equalsIgnoreCase(date_3)) {
+                    date3=date2;
+                } else if (month1.equalsIgnoreCase(month2)) {
                     date2 = date2.replace(month2, "");
                     date3 = date1 + " -" + date2;
                 } else {
@@ -141,17 +148,17 @@ public class PaginationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
                 movieVH.articleTitle.setText(text);
 
-                String conf_type=result.getConf_type();
+                String conf_type = result.getConf_type();
                 movieVH.articleCity.setText(result.getCity() + ", " + result.getCountry());
 
-                Log.d(TAG, "onBindViewHolder: "+result.getConf_type());
+                Log.d(TAG, "onBindViewHolder: " + result.getConf_type());
 
-                if (conf_type.equalsIgnoreCase("webinar")){
+                if (conf_type.equalsIgnoreCase("webinar")) {
                     movieVH.articleCity.setVisibility(View.GONE);
                     movieVH.confType.setVisibility(View.VISIBLE);
                     movieVH.confType.setText("Online Event");
 
-                }else {
+                } else {
                     movieVH.confType.setVisibility(View.GONE);
                     movieVH.articleCity.setVisibility(View.VISIBLE);
 
@@ -164,7 +171,7 @@ public class PaginationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 if (movieResults.get(position).getIcon_url() == null) {
                     movieVH.progressBar.setVisibility(View.GONE);
                 } else {        // load movie thumbnail
-                    Log.d(TAG, "onBindViewHolder: "+result.getIcon_url());
+                    Log.d(TAG, "onBindViewHolder: " + result.getIcon_url());
                     Glide.with(context)
                             .load(result.getIcon_url())
                             .apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.NONE))
