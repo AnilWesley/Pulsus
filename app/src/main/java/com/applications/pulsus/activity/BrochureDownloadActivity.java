@@ -159,8 +159,8 @@ public class BrochureDownloadActivity extends AppCompatActivity {
         } else if (company.isEmpty()) {
             Toast.makeText(BrochureDownloadActivity.this, "Enter Company", Toast.LENGTH_SHORT).show();
 
-        } else if (country.equalsIgnoreCase("Select Your Country")) {
-            Toast.makeText(BrochureDownloadActivity.this, "Select Your Country", Toast.LENGTH_SHORT).show();
+        } else if (country.equalsIgnoreCase("Select Country")) {
+            Toast.makeText(BrochureDownloadActivity.this, "Select Country", Toast.LENGTH_SHORT).show();
 
         } else if (email.isEmpty()) {
             Toast.makeText(BrochureDownloadActivity.this, "Enter Email", Toast.LENGTH_SHORT).show();
