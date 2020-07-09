@@ -217,11 +217,11 @@ public class UserLoginActivity extends AppCompatActivity {
         /*super.onBackPressed();*/
         if (category.equalsIgnoreCase("history")){
             Intent intent = new Intent(UserLoginActivity.this, HomeActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
         }else {
             Intent intent = new Intent(UserLoginActivity.this, DashBoardActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.putExtra("id", id);
             intent.putExtra("title", title);
             intent.putExtra("category", category);
