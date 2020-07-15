@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#77E5E5E5"
     android:orientation="vertical"
     tools:context=".activity.DashBoardActivity"
     tools:ignore="SmallSp,UseCompoundDrawables">
@@ -69,29 +68,29 @@
 
 
 
-                <TextView
-                    android:id="@+id/date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:gravity="center_vertical"
-                    android:text=""
-                    android:drawableStart="@drawable/ic_date_range"
-                    android:drawablePadding="5dp"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:gravity="center_vertical"
+                        android:text=""
+                        android:drawableStart="@drawable/ic_date_range"
+                        android:drawablePadding="5dp"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
 
-                <TextView
-                    android:id="@+id/location"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:gravity="center_vertical"
-                    android:text=""
-                    android:drawableStart="@drawable/ic_location"
-                    android:drawablePadding="5dp"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:gravity="center_vertical"
+                        android:text=""
+                        android:drawableStart="@drawable/ic_location"
+                        android:drawablePadding="5dp"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/confType"
@@ -160,11 +159,11 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginTop="5dp"
-                                android:textColor="@color/colorBlack"
                                 android:fontFamily="@font/proxima_nova_regular"
                                 android:gravity="center"
                                 android:text="@string/submit_abstract"
-                                android:textSize="10sp" />
+                                android:textSize="10sp"
+                                android:textColor="@color/black"/>
 
                         </LinearLayout>
 
@@ -191,10 +190,10 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginTop="5dp"
-                                android:textColor="@color/colorBlack"
                                 android:fontFamily="@font/proxima_nova_regular"
                                 android:text="@string/registration"
-                                android:textSize="10sp" />
+                                android:textSize="10sp"
+                                android:textColor="@color/black"/>
 
                         </LinearLayout>
 
@@ -219,14 +218,13 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
                                 android:layout_gravity="center"
                                 android:layout_marginTop="5dp"
-                                android:textColor="@color/colorBlack"
                                 android:fontFamily="@font/proxima_nova_regular"
-                                android:minLines="2"
+                                android:gravity="center"
                                 android:text="@string/download_brochure"
-                                android:textSize="10sp" />
+                                android:textSize="10sp"
+                                android:textColor="@color/black"/>
 
                         </LinearLayout>
 
@@ -254,10 +252,10 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginTop="5dp"
-                                android:textColor="@color/colorBlack"
                                 android:fontFamily="@font/proxima_nova_regular"
                                 android:text="@string/sessions_tracks"
-                                android:textSize="10sp" />
+                                android:textSize="10sp"
+                                android:textColor="@color/black"/>
 
                         </LinearLayout>
 
@@ -298,10 +296,10 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginTop="5dp"
-                                android:textColor="@color/colorBlack"
                                 android:fontFamily="@font/proxima_nova_regular"
                                 android:text="@string/schedule"
-                                android:textSize="10sp" />
+                                android:textSize="10sp"
+                                android:textColor="@color/black"/>
 
                         </LinearLayout>
 
@@ -328,11 +326,11 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginTop="5dp"
-                                android:textColor="@color/colorBlack"
                                 android:fontFamily="@font/proxima_nova_regular"
                                 android:gravity="center"
                                 android:text="@string/chat"
-                                android:textSize="10sp" />
+                                android:textSize="10sp"
+                                android:textColor="@color/black"/>
 
                         </LinearLayout>
 
@@ -361,8 +359,8 @@
                                 android:layout_marginTop="5dp"
                                 android:fontFamily="@font/proxima_nova_regular"
                                 android:text="@string/feedback"
-                                android:textColor="@color/colorBlack"
-                                android:textSize="10sp" />
+                                android:textSize="10sp"
+                                android:textColor="@color/black"/>
 
                         </LinearLayout>
 
@@ -378,7 +376,6 @@
                                 android:layout_height="50dp"
                                 android:layout_gravity="center"
                                 android:alpha="0.4"
-                                android:tint="@color/colorRed"
                                 android:background="@drawable/ovalshape"
                                 android:contentDescription="@string/app_name"
                                 android:padding="@dimen/padding_10"
@@ -397,6 +394,7 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/linearPresentation"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -420,9 +418,9 @@
                                 android:layout_marginTop="5dp"
                                 android:fontFamily="@font/proxima_nova_regular"
                                 android:gravity="center"
-                                android:textColor="@color/colorBlack"
-                                android:text="@string/session_recording"
-                                android:textSize="10sp" />
+                                android:text="@string/presentation"
+                                android:textSize="10sp"
+                                android:textColor="@color/black"/>
 
                         </LinearLayout>
 
@@ -474,10 +472,10 @@
                                 android:layout_height="50dp"
                                 android:layout_gravity="center"
                                 android:alpha="0.4"
+                                android:tint="@color/colorRed"
                                 android:background="@drawable/ovalshape"
                                 android:contentDescription="@string/app_name"
                                 android:padding="@dimen/padding_10"
-                                android:tint="@color/colorRed"
                                 android:src="@drawable/ic_hotel" />
 
                             <TextView
@@ -485,11 +483,10 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginTop="5dp"
-                                android:textColor="@color/colorBlack"
-
                                 android:fontFamily="@font/proxima_nova_regular"
                                 android:text="@string/hotel"
-                                android:textSize="10sp" />
+                                android:textSize="10sp"
+                                android:textColor="@color/black"/>
 
                         </LinearLayout>
 
@@ -504,10 +501,10 @@
                                 android:layout_height="50dp"
                                 android:layout_gravity="center"
                                 android:alpha="0.4"
+                                android:tint="@color/colorRed"
                                 android:background="@drawable/ovalshape"
                                 android:contentDescription="@string/app_name"
                                 android:padding="@dimen/padding_10"
-                                android:tint="@color/colorRed"
                                 android:src="@drawable/ic_travel" />
 
                             <TextView
@@ -515,11 +512,10 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginTop="5dp"
-                                android:textColor="@color/colorBlack"
-
                                 android:fontFamily="@font/proxima_nova_regular"
                                 android:text="@string/travel"
-                                android:textSize="10sp" />
+                                android:textSize="10sp"
+                                android:textColor="@color/black"/>
 
                         </LinearLayout>
 
@@ -534,10 +530,10 @@
                                 android:layout_height="50dp"
                                 android:layout_gravity="center"
                                 android:alpha="0.4"
+                                android:tint="@color/colorRed"
                                 android:background="@drawable/ovalshape"
                                 android:contentDescription="@string/app_name"
                                 android:padding="@dimen/padding_10"
-                                android:tint="@color/colorRed"
                                 android:src="@drawable/ic_sight_seeing" />
 
                             <TextView
@@ -545,11 +541,10 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginTop="5dp"
-                                android:textColor="@color/colorBlack"
-
                                 android:fontFamily="@font/proxima_nova_regular"
                                 android:text="@string/sightseeing"
-                                android:textSize="10sp" />
+                                android:textSize="10sp"
+                                android:textColor="@color/black"/>
 
                         </LinearLayout>
 
@@ -565,10 +560,10 @@
                                 android:layout_height="50dp"
                                 android:layout_gravity="center"
                                 android:alpha="0.4"
+                                android:tint="@color/colorRed"
                                 android:background="@drawable/ovalshape"
                                 android:contentDescription="@string/app_name"
                                 android:padding="@dimen/padding_10"
-                                android:tint="@color/colorRed"
                                 android:src="@drawable/ic_dinning" />
 
                             <TextView
@@ -578,9 +573,8 @@
                                 android:layout_marginTop="5dp"
                                 android:fontFamily="@font/proxima_nova_regular"
                                 android:text="@string/dining"
-                                android:textColor="@color/colorBlack"
-
-                                android:textSize="10sp" />
+                                android:textSize="10sp"
+                                android:textColor="@color/black"/>
 
                         </LinearLayout>
 

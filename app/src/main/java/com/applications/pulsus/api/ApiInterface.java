@@ -13,6 +13,7 @@ import com.applications.pulsus.models.PaymentStripe;
 import com.applications.pulsus.models.RegistrationsListResponse;
 import com.applications.pulsus.models.Sessions;
 import com.applications.pulsus.models.SubmitAbstract;
+import com.applications.pulsus.models.SubmitAudioVideo;
 import com.applications.pulsus.models.Template;
 import com.applications.pulsus.models.TrackName;
 import com.applications.pulsus.models.UserCreation;
@@ -102,6 +103,23 @@ public interface ApiInterface {
             @Part("date") RequestBody date,
             @Part("app_user_id") RequestBody app_user_id,
             @Part("source") RequestBody source);
+
+
+    @Multipart
+    @POST("api/conference/audio_video_submission")
+    Call<SubmitAudioVideo> processDataSendAudioVideo(
+            @Part MultipartBody.Part file,
+            @Part("conf_id") RequestBody conf_id,
+            @Part("title") RequestBody title,
+            @Part("name") RequestBody name,
+            @Part("country") RequestBody country,
+            @Part("email") RequestBody email,
+            @Part("phone") RequestBody phone,
+            @Part("address") RequestBody address,
+            @Part("date") RequestBody date,
+            @Part("app_user_id") RequestBody app_user_id,
+            @Part("source") RequestBody source);
+
 
 
 
