@@ -43,6 +43,7 @@ import com.applications.pulsus.models.Template;
 import com.applications.pulsus.models.TrackName;
 import com.applications.pulsus.utils.MyAppPrefsManager;
 import com.applications.pulsus.utils.ProgressRequestBody;
+import com.applications.pulsus.utils.UriUtils;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.gson.JsonObject;
 import com.karumi.dexter.Dexter;
@@ -563,7 +564,10 @@ public class SubmitAbstractActivity extends AppCompatActivity implements Progres
                 String uriString = uri.toString();
                 File myFile = new File(uriString);
 
-                path = getFilePathFromURI(SubmitAbstractActivity.this, uri);
+                path = UriUtils.getPathFromUri(SubmitAbstractActivity.this,uri);
+                Log.d("TAG", "File path: " + path);
+
+                //path = getFilePathFromURI(SubmitAbstractActivity.this, uri);
                 String fileExt = MimeTypeMap.getFileExtensionFromUrl(uriString);
                 Log.d(TAG, "" + path);
                 Log.d(TAG, "" + fileExt);
@@ -684,11 +688,19 @@ public class SubmitAbstractActivity extends AppCompatActivity implements Progres
      * Select image fro gallery
      */
     private void dispatchFileIntent() {
-        //checking the permission
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        // intent.setType("application/pdf");
-        intent.setType("application/*");
+
+        String[] mimeTypes =
+                {"application/msword","application/vnd.openxmlformats-officedocument.wordprocessingml.document", // .doc & .docx
+                        //  "application/vnd.ms-powerpoint","application/vnd.openxmlformats-officedocument.presentationml.presentation", // .ppt & .pptx
+                        "application/vnd.ms-excel","application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", // .xls & .xlsx
+                        //  "text/plain",
+                        "application/pdf",
+                        // "application/zip"
+                };
+
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        intent.setType("*/*");
+        intent.putExtra(Intent.EXTRA_MIME_TYPES, mimeTypes);
         startActivityForResult(intent, 1);
     }
 

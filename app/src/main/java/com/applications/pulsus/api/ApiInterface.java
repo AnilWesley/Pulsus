@@ -118,6 +118,7 @@ public interface ApiInterface {
             @Part("address") RequestBody address,
             @Part("date") RequestBody date,
             @Part("app_user_id") RequestBody app_user_id,
+            @Part("type") RequestBody type,
             @Part("source") RequestBody source);
 
 
