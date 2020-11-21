@@ -67,6 +67,10 @@ public class ContactUsActivity extends AppCompatActivity {
     TextView txtDailUK;
     @BindView(R.id.txtDailUSA)
     TextView txtDailUSA;
+    @BindView(R.id.txtMail)
+    TextView txtMail;
+    @BindView(R.id.txtdail)
+    TextView txtdail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,7 +90,7 @@ public class ContactUsActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.txtmailAmerica, R.id.txtmail2, R.id.txtmail3, R.id.txtmail4, R.id.txtDailUK, R.id.txtDailUSA, R.id.btnDownload})
+    @OnClick({R.id.txtmailAmerica, R.id.txtmail2, R.id.txtmail3, R.id.txtmail4, R.id.txtDailUK, R.id.txtDailUSA, R.id.btnDownload, R.id.txtMail, R.id.txtdail})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.txtmailAmerica:
@@ -144,6 +148,23 @@ public class ContactUsActivity extends AppCompatActivity {
                 String temp2 = "tel:" + txtDailUSA.getText().toString();
                 intent2.setData(Uri.parse(temp2));
                 startActivity(intent2);
+                break;
+            case R.id.txtMail:
+                Intent i5 = new Intent(Intent.ACTION_SEND);
+                i5.setType("message/rfc822");
+                i5.putExtra(Intent.EXTRA_EMAIL, new String[]{txtMail.getText().toString()});
+
+                try {
+                    startActivity(Intent.createChooser(i5, "Send mail..."));
+                } catch (android.content.ActivityNotFoundException ex) {
+                    Toast.makeText(ContactUsActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case R.id.txtdail:
+                Intent intent4 = new Intent(Intent.ACTION_DIAL);
+                String temp5 = "tel:" + txtdail.getText().toString();
+                intent4.setData(Uri.parse(temp5));
+                startActivity(intent4);
                 break;
             case R.id.btnDownload:
                 firstName = Objects.requireNonNull(editFirst.getText()).toString().trim();

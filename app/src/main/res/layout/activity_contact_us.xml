@@ -25,7 +25,8 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:paddingStart="@dimen/padding_10"
-                android:paddingEnd="@dimen/padding_10">
+                android:paddingEnd="@dimen/padding_10"
+                android:visibility="gone">
 
 
                 <TextView
@@ -55,7 +56,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="@dimen/padding_10"
                 android:layout_marginBottom="@dimen/padding_10"
-                android:background="@color/quantum_grey" />
+                android:background="@color/quantum_grey"
+                android:visibility="gone"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -63,7 +65,8 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:paddingStart="@dimen/padding_10"
-                android:paddingEnd="@dimen/padding_10">
+                android:paddingEnd="@dimen/padding_10"
+                android:visibility="gone">
 
 
                 <TextView
@@ -93,7 +96,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="@dimen/padding_10"
                 android:layout_marginBottom="@dimen/padding_10"
-                android:background="@color/quantum_grey" />
+                android:background="@color/quantum_grey"
+                android:visibility="gone"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -101,7 +105,8 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:paddingStart="@dimen/padding_10"
-                android:paddingEnd="@dimen/padding_10">
+                android:paddingEnd="@dimen/padding_10"
+                android:visibility="gone">
 
 
                 <TextView
@@ -132,7 +137,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="@dimen/padding_10"
                 android:layout_marginBottom="@dimen/padding_10"
-                android:background="@color/quantum_grey" />
+                android:background="@color/quantum_grey"
+                android:visibility="gone"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -140,7 +146,8 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:paddingStart="@dimen/padding_10"
-                android:paddingEnd="@dimen/padding_10">
+                android:paddingEnd="@dimen/padding_10"
+                android:visibility="gone">
 
 
                 <TextView
@@ -170,14 +177,16 @@
                 android:layout_height="1dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:background="@color/quantum_grey" />
+                android:background="@color/quantum_grey"
+                android:visibility="gone"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:paddingStart="@dimen/padding_10"
-                android:paddingEnd="@dimen/padding_10">
+                android:paddingEnd="@dimen/padding_10"
+                android:visibility="gone">
 
 
                 <TextView
@@ -206,7 +215,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="@dimen/padding_10"
                 android:layout_marginBottom="@dimen/padding_10"
-                android:background="@color/quantum_grey" />
+                android:background="@color/quantum_grey"
+                android:visibility="gone"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -214,7 +224,8 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:paddingStart="@dimen/padding_10"
-                android:paddingEnd="@dimen/padding_10">
+                android:paddingEnd="@dimen/padding_10"
+                android:visibility="gone">
 
 
                 <TextView
@@ -236,7 +247,42 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/padding_10"
+                android:paddingEnd="@dimen/padding_10"
+                android:paddingBottom="@dimen/padding_10">
 
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="35 Ruddlesway, Windsor, Berkshire, SL4 5SF"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <TextView
+                    android:id="@+id/txtMail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:drawableEnd="@drawable/ic_baseline_mail_24"
+                    android:gravity="center_vertical"
+                    android:text="contactus@pulsus.com"/>
+
+
+                <TextView
+                    android:id="@+id/txtdail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:drawableEnd="@drawable/ic_baseline_call_24"
+                    android:gravity="center_vertical"
+                    android:text="0044-7469919014" />
+
+            </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
